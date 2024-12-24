@@ -17,7 +17,6 @@ export async function GET(
             return
         }
 
-
         const result = await restockService.isSubscribed(
             email as string,
             variant_id as string

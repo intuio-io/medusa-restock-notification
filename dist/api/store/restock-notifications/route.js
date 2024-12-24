@@ -27,7 +27,7 @@ exports.POST = POST;
 // Get user's subscriptions
 async function GET(req, res) {
     const restockService = req.scope.resolve("restockService");
-    const { email, limit, offset } = req.query;
+    const { email } = req.query;
     try {
         if (!email) {
             res.status(400).json({
@@ -35,7 +35,7 @@ async function GET(req, res) {
             });
             return;
         }
-        const subscriptions = await restockService.listSubscriptions(email, limit, offset);
+        const subscriptions = await restockService.listSubscriptions(email);
         res.status(200).json({
             subscriptions
         });

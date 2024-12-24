@@ -39,7 +39,7 @@ export async function GET(
     res: MedusaResponse
 ): Promise<void> {
     const restockService = req.scope.resolve("restockService")
-    const { email, limit, offset } = req.query
+    const { email } = req.query
 
     try {
         if (!email) {
@@ -50,9 +50,7 @@ export async function GET(
         }
 
         const subscriptions = await restockService.listSubscriptions(
-            email as string,
-            limit,
-            offset
+            email as string
         )
 
         res.status(200).json({
