@@ -12,7 +12,7 @@ A plugin for Medusa e-commerce that adds restock notification functionality usin
 ## Installation
 
 ```bash
-npm install medusa-plugin-restock-notification @sendgrid/mail @sendgrid/client
+npm install @intuio/medusa-restock-notification@medusa-v1
 ```
 
 ## Configuration
@@ -23,7 +23,7 @@ Add to your `medusa-config.js`:
 const plugins = [
   // ... other plugins
   {
-    resolve: `medusa-plugin-restock-notification`,
+    resolve: `@intuio/medusa-restock-notification`,
     options: {
       sendgrid_api_key: process.env.SENDGRID_API_KEY,
       sendgrid_from: process.env.SENDGRID_FROM,

@@ -22,8 +22,6 @@ async function handleRestockNotification({ data, container, }) {
         const subscribers = await restockService.getSubscribers(variant.id);
         if (subscribers.length === 0)
             return;
-        console.log('thjis is from kris plese work');
-        console.log(subscribers);
         // Send restock notification
         await sendgridService.sendEmail({
             template_id: process.env.SENDGRID_RESTOCK_TEMPLATE_ID,

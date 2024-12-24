@@ -4,6 +4,9 @@
   "description": "Restock notification plugin for Medusa e-commerce",
   "author": "Kris Rego",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "medusa-plugin",
     "restock",
