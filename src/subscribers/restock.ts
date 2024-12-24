@@ -55,7 +55,7 @@ export default async function handleRestockNotification({
 }
 
 export const config: SubscriberConfig = {
-    event: "product-variant.updated",
+    event: ProductVariantService.Events.UPDATED,
     context: {
         subscriberId: "restock-handler",
     },

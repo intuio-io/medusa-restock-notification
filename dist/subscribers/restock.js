@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.config = void 0;
+// src/subscribers/restock.ts
+const medusa_1 = require("@medusajs/medusa");
 async function handleRestockNotification({ data, container, }) {
     const restockService = container.resolve("restockService");
     const productVariantService = container.resolve("productVariantService");
@@ -20,6 +22,8 @@ async function handleRestockNotification({ data, container, }) {
         const subscribers = await restockService.getSubscribers(variant.id);
         if (subscribers.length === 0)
             return;
+        console.log('thjis is from kris plese work');
+        console.log(subscribers);
         // Send restock notification
         await sendgridService.sendEmail({
             template_id: process.env.SENDGRID_RESTOCK_TEMPLATE_ID,
@@ -46,7 +50,7 @@ async function handleRestockNotification({ data, container, }) {
 }
 exports.default = handleRestockNotification;
 exports.config = {
-    event: "product-variant.updated",
+    event: medusa_1.ProductVariantService.Events.UPDATED,
     context: {
         subscriberId: "restock-handler",
     },
