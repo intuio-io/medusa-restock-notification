@@ -91,8 +91,21 @@ Available template variables:
 ## Development
 
 ```bash
+# Clone the repository
+git clone your-repo-url
+cd medusa-restock-notification
+
+# Install dependencies
+npm install
+
+# Build
 npm run build
-npm run watch # For development
+
+# Run migrations
+npx medusa migrations run
+
+# Watch mode
+npx medusa develop
 ```
 
 ## License
