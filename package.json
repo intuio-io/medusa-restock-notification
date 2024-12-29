@@ -1,6 +1,6 @@
 {
   "name": "@intuio/medusa-restock-notification",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Restock notification plugin for Medusa e-commerce",
   "author": "Kris Rego",
   "license": "MIT",
